@@ -35,9 +35,7 @@ struct ContentView: View {
             Button("Show Message") {
                 
                 let strAwesome = "You Are Awesome!"
-                let strGreate = "You Are Greate!"
-                //let imageZero = "image0"
-                //let imageOne = "image1"
+                let strGreate = "You Are Greate!"                
                 
                 message = (message == strAwesome ? strGreate : strAwesome)
                 if imageNumber == 8 {
