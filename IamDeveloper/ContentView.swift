@@ -11,6 +11,7 @@ struct ContentView: View {
     
     @State private var message = ""
     @State private var imageName = ""
+    @State private var imageNumber = 0
     
     var body: some View {
         VStack {
@@ -31,15 +32,19 @@ struct ContentView: View {
             
             Spacer()
             
-            Button("Press Me!") {
+            Button("Show Message") {
                 
                 let strAwesome = "You Are Awesome!"
                 let strGreate = "You Are Greate!"
-                let imageZero = "image0"
-                let imageOne = "image1"
+                //let imageZero = "image0"
+                //let imageOne = "image1"
                 
                 message = (message == strAwesome ? strGreate : strAwesome)
-                imageName = (imageName == imageZero ? imageOne: imageZero)
+                if imageNumber == 8 {
+                    imageNumber = 0
+                }
+                imageName = "image\(imageNumber)"
+                imageNumber += 1
             }
         }
         .buttonStyle(.borderedProminent)
